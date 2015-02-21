@@ -577,7 +577,7 @@ De topologische $n$-dimensionale vari\"eteiten zijn dus $(\R^n,\mathsf{Top})$-va
 
 \chapter{Homotopie}
 
-Men kan topologische ruimten opvatten als een abstractie van metrische ruimten. Soms is het echter handig om verschillende niet-homeomorfe topologische ruimtes als equivalent te kunnen beschouwen. De volgende drie ruimten zijn bijvoorbeeld niet homeomorf, maar kan men wel ``intu\"itief'' omvormen in elkaar.
+Men kan topologische ruimten opvatten als een abstractie van metrische ruimten. Soms is het echter handig om verschillende niet-homeomorfe topologische ruimtes als equivalent te kunnen beschouwen. De volgende drie ruimten zijn bijvoorbeeld niet homeomorf, maar kan men wel intu\"itief ``omvormen'' in elkaar.
 
 \begin{center}
 \begin{tikzpicture}
@@ -606,7 +606,7 @@ Een  {\em homotopie}\index{homotopie} van $f$ naar $g$ is een continue afbeeldin
 $$H:X\times I \to Y$$
 zodat
 $$H(-,0)=f \mbox{ en } H(-,1)=g$$
-met $H(-, t)$ de continue functie $X\to Y; x\to H(x,t)$.
+met $H(-, t)$ de continue functie $X\to Y; x \mapsto H(x,t)$.
 
 Als er een homotopie tussen $f$ en $g$ bestaat, zeggen we dat $f$ {\em homotoop}\index{homotoop} is met $g$ (in $Y$). We
 noteren $f\simeq g$ of $f\simeq_{H} g$.
@@ -668,7 +668,7 @@ $f_{|A_i}=f_i$. \label{pasting}
 
 \bew De functie 
 
-$$f:X\to Y: a \to f_i(a), \mbox{ als } a\in A_i$$
+$$f:X\to Y: a \mapsto f_i(a), \mbox{ als } a\in A_i$$
 
 is goed gedefinieerd en men verifieert eenvoudig dat voor alle gesloten verzamelingen $G$ in $Y$ de verzameling $f^{-1}(G)$ gesloten is in $X$. \B
 
@@ -704,7 +704,7 @@ Dat pad-homotopie een equivalentierelatie definieert, volgt op dezelfde manier.
 $f_0\simeq g_0$ en $f_1, g_1:Y\to Z$, $f_1\simeq g_1$ dan is $f_1\circ f_0\simeq g_1 \circ g_0$.
 \end{eig}
 
-\bew De homotopie wordt bepaald door $H_{t}^{(1)}\circ H_{t}^{(0)}$, waarbij $H_{t}^{(0)}$ de homotopie tussen $f_0$ en $g_0$ bepaalt en $H_{t}^{(1)}$ deze tussen $f_1$ en $g_1$. \B
+\bew De homotopie wordt bepaald door $H_{t}^{(1)}\circ H_{t}^{(0)}$, waarbij $H^{(0)}$ de homotopie tussen $f_0$ en $g_0$ bepaalt en $H^{(1)}$ deze tussen $f_1$ en $g_1$. \B
 
 \begin{eig} Zijn $f_i: X_i\to Y_i$ en $g_i:X_i\to Y_i$, voor $i=1,2$ homotope functies, dan is de afbeelding $f_1\times f_2:X_1\times X_2 \to Y_1\times Y_2$ homotoop met de afbeelding $g_1\times g_2:X_1\times X_2 \to Y_1\times Y_2$.
 \label{homotopprod}\end{eig}
