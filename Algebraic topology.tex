@@ -79,6 +79,8 @@
 \newcommand{\Sf}{\mathbb{S}}
 \newcommand{\dd}{\mathsf{d}}
 
+\DeclareMathOperator{\Ima}{im}
+
 \newcommand{\bew}{{\sc Bewijs: }}
 \newcommand{\B}{\rule{1mm}{0mm} \hfill $\Box$ }
 \newcommand{\id}{\mbox{id}}
@@ -1536,7 +1538,7 @@ Deze eigenschap karakteriseert het geamalgameerd product op isomorfisme na.
 We zullen in dit hoofdstuk illustreren hoe de berekening van de fundamentaalgroep van verschillende topo\-logische ruimten kan teruggebracht worden tot de berekening van de fundamentaalgroep van de cirkel. Voor deze laatste hebben we in de vorige sectie aangetoond dat deze isomorf is met $\Z$.
 
 De volgende stelling brengt de berekening van de fundamentaalgroep van een product van
-(pad-samenhangende) ruimten terug tot de berekening van de fundamentaalgroep van de factoren. We wisten reeds dat de torus, wat het direct product is van twee cirkels, homeomorf is met $\Z\times \Z$, dus de statement van volgende stelling is geen verrassing.
+(pad-samenhangende) ruimten terug tot de berekening van de fundamentaalgroep van de factoren. We wisten reeds dat voor de torus, wat het direct product is van twee cirkels, deze isoomorf is met $\Z\times \Z$, dus de statement van volgende stelling is geen verrassing.
 
 
 
@@ -2003,15 +2005,10 @@ Voor zulk een voortbrenger $p-q$ is er uiteraard een pad $\sigma:\Delta_{1}\to X
 $\partial_{1}(\sigma)=p-q$. Dus $p-q\in \mbox{{\rm im}}(\partial_{1})$, wat $\ker f\subseteq \mbox{{\rm im}}(\partial_{1})$ impliceert. Hiermee is de bewering bewezen. \B
 
 In wat volgt geven we een verband tussen de eerste homologiegroep van $X$ en de fundamentaalgroep. We beginnen met de afbeelding tussen de fundamentaalgroep en de homologie in te voeren. 
-Zij $X$ een pad-samenhangende ruimte. Een lus in $X$, $f:I\to X$ is  een singulier 1-simplex. Het is een gesloten 
-$1$-keten vermits $\partial_1(f)=f(1)-f(0)=0$. Dus met een lus $f$ komt een homologieklasse in $H_1(X)$ overeen, die we met $[f]_{H}$ noteren. Meer algemeen kunnen we de ``homologieklasse'' van een pad $g:[0,1]\to X$ van $x_0$ naar $x_1$ defini\"eren, waarbij twee paden $f,g$ van $x_0$ naar $x_1$ homoloog zijn als de 1-cycle $f-g\in S_1(X)$ een 1-rand is.
+Zij $(X, x_0)$ een gepunte pad-samenhangende ruimte. Een pad $f:I \to X$ is een singulier 1-simplex, en correspondeert dus met een voortbrenger in $S_1(X)$. Als we bovendien het beeld van de randafbeelding $\partial_2$ uitdelen bekomen we een element in het quoti\"ent $S_1(X) / \Ima \partial_2$, dat we noteren door $[f]_H$.
 
-We defini\"eren een natuurlijke afbeelding
+Het volgend lemma bewijst dat dit element hetzelfde is voor de ganse pad-homotopieklasse van $f$.
 
-$$\gamma: \pi_{1}(X,x_0) \to H_{1}(X); [f] \mapsto [f]_H.$$
-
-
-(Hierbij is $[f]$ de homotopieklasse van $f$.) We moeten tonen dat deze afbeelding goed gedefini\"eerd is. Als de lussen $f$ en $g$ homotoop zijn, moet $[f]_H=[g]_H$. Het volgende lemma bewijst  dat (pad)-homotope paden homoloog zijn.
 
 \begin{lem} Zij $f,g$ paden in $X$ met zelfde begin -en eindpunt.  Als $f\simeq_{F} g$ ($F$ een pad-homotopie tussen
 $f$ en $g$) dan is $[f]_{H}=[g]_H$.
@@ -2025,6 +2022,16 @@ $$\partial_2(\sigma)=e_{x_{1}}-g+f$$
 
 (waarbij $x_1$ het eindpunt is van $f$ en $g$). De constante afbeelding $e_{x_{1}}$ is het beeld van het constante 2-simplex dus $f-g$ is het beeld van een 2-keten, wat betekent dat $[f]_H=[g]_H$. \rule{1mm}{0mm} \hfill \B 
 
+
+
+Ten gevolge van dit lemma bekomen we de volgende natuurlijke afbeelding 
+$$\phi: \pi_{1}(X) \to S_1(X) / \Ima \partial_2; [f] \mapsto [f]_H.$$
+Beschouw nu het bijzondere geval dat $f$ een lus is. 
+Het overeenkomstig element in $S_1(X)$ is een gesloten 1-keten aangezien $\partial_1(f)=f(1)-f(0)=0$.
+Bijgevolg is $[f]_H$ een element van het quoti\"ent $\ker \partial_1 / \Ima \partial_2$, m.a.w. de eerste homologiegroep $H_1(X)$. 
+De restrictie $\gamma:=\phi\vert_{\pi_1(X,x_0)}$ is dus een afbeelding van de fundamentaalgroep naar de eerste homologiegroep. 
+Deze afbeelding $\gamma$ is nu cruciaal in wat volgt.
+
 \begin{stel} Zij $X$ een pad-samenhangende ruimte en $x_0$ een basispunt van $X$. Dan is de afbeelding $\gamma:\pi_{1}(X,x_0)\to H_{1}(X)$ een surjectief groepsmorfisme. De kern is
 de commutator deelgroep van $\pi_{1}(X,x_0)$. Dit impliceert dat $H_{1}(X)\cong \pi_{1}(X,x_0)^{ab} = 
 \pi_{1}(X,x_0)/\pi_{1}(X,x_0)'$.\end{stel}
@@ -2032,7 +2039,7 @@ de commutator deelgroep van $\pi_{1}(X,x_0)$. Dit impliceert dat $H_{1}(X)\cong 
 \bew 
 We tonen eerst aan dat $\gamma$ een groepsmorfisme is. 
 
-Zij $f$ een lus in $X$ met basispunt $x_0$. We hebben gezien dat bij definitie $f$  een gesloten 1-keten is. Zij $e_{x_{0}}$ het constante pad in het basispunt $x_0$. Definieer een singulier 2-simplex $\sigma: \Delta_2 \to X;
+Zij $f$ een lus in $X$ met basispunt $x_0$. We hebben gezien dat met $f$  een gesloten 1-keten correspondeert. Zij $e_{x_{0}}$ het constante pad in het basispunt $x_0$. Definieer een singulier 2-simplex $\sigma: \Delta_2 \to X;
 (x,y)\mapsto f(x)$. De rand $\partial_2(\sigma)$ is gelijk aan $\overline{f}-e_{x_{0}}+f$. Het constante 1-simplex $e_{x_{0}}$ is een rand van het ``constante'' 2-simplex. Dus 1-ketens $\overline{f}$ en $-f$ verschillen een 1-rand en zijn dus ``homoloog'', i.e., $[\overline{f}]_{H}=-[f]_{H}$.
 
 Zij $f$ en $g$ nu lussen met basispunt $x_0$. Definieer het 2-simplex 
@@ -2077,9 +2084,9 @@ Dan is, vermits $\gamma$ een homomorfisme is,
 Als $c$ een 1-cycle is dan is $\partial(c)=0$ en volgt
 $\gamma([f])=[c]_H$. Het morfisme $\gamma$ is dus surjectief op $H_1(X)$.
 
-Tenslotte moeten we de kern van $\gamma$ bepalen. Vermits $H_{1}(X)$ een abelse groep is, bevat de kern de commutator deelgroep $[\pi_1(X), \pi_1(X)]$. We moeten aantonen dat de kern hieraan gelijk is.
+Tenslotte moeten we de kern van $\gamma$ bepalen. Vermits $H_{1}(X)$ een abelse groep is, bevat de kern de commutator deelgroep $[\pi_1(X,x_0), \pi_1(X,x_0)]$. We moeten aantonen dat de kern hieraan gelijk is.
 
-Noteren we de geabelianiseerde fundamentaalgroep $\pi_1(X)^{ab}$\index{$\pi_1(X)^{ab}$} voor de eenvoud met $G$. De elementen van $G$ noteren we met $[g]_G$. (We noteren de bewerking in $G$ ook multiplicatief  als $G$ een abelse groep.) Elk 1-simplex $\sigma$ bepaalt (zoals we hiervoor gezien hebben) een element $\beta(\sigma)=[\tilde{\sigma}]_G$ in $G$. Vermits $G$ een abelse groep is, bestaat er een uniek groepsmorfisme $\beta: S_{1}(X)\to G$. We tonen aan dat de 1-randen afgebeeld worden op het triviale element in $G$, i.e., $\partial_2(S_2(X))\subset \ker \beta$.
+Noteren we de geabelianiseerde fundamentaalgroep $\pi_1(X,x_0)^{ab}$\index{$\pi_1(X,x_0)^{ab}$} voor de eenvoud met $G$. De elementen van $G$ noteren we met $[g]_G$. (We noteren de bewerking in $G$ ook multiplicatief.) Elk 1-simplex $\sigma$ bepaalt (zoals we hiervoor gezien hebben) een element $\beta(\sigma)=[\tilde{\sigma}]_G$ in $G$. Vermits $G$ een abelse groep is, bestaat er een uniek groepsmorfisme $\beta: S_{1}(X)\to G$. We tonen aan dat de 1-randen afgebeeld worden op het triviale element in $G$, i.e., $\partial_2(S_2(X))\subset \ker \beta$.
 
 Zij $\sigma$ een willekeurig 2-simplex. Noteer $v_i=\sigma(e_i)$ en $\sigma^{(i)}=\sigma \circ F_{i}^{2}$ dan is
 $\partial (\sigma)= \sigma^{(0)}-\sigma^{(1)}+\sigma^{(2)}$.  Merk op dat de lus  $\sigma^{(0)}* (\overline{\sigma^{(1)}})*\sigma^{(2)}$ met basispunt $v_1$ homotoop is met de constante lus $e_{v_{1}}$ (de afbeelding van $I$ is immers uitbreidbaar tot een afbeelding van ``$\Delta_2$'').
@@ -2091,9 +2098,9 @@ $\partial (\sigma)= \sigma^{(0)}-\sigma^{(1)}+\sigma^{(2)}$.  Merk op dat de lus
 & =  [\alpha(v_1)*\sigma^{(0)}*\overline{\sigma^{(1)}}*\sigma^{(2)}*\overline{\alpha(v_1)}]_G\\
 & = [\alpha(v_1)*e_{v_{1}}*\overline{\alpha(v_1)}]_G\\
 & = [e_{x_{0}}]_G. \end{align*}
-Dit bewijst dat $\mbox{im }\partial_2(S_{2}(X))\subset \ker \beta$.
+Dit bewijst dat $\partial_2(S_{2}(X))\subset \ker \beta$. Op deze manier induceert het morfisme $\beta$ een morfisme $\delta: S_1(X) / \Ima \partial_2 \to G$. 
 
-Zij nu $f$ een lus met basispunt $x_0$ waarvoor $[f]\in \ker \gamma$. Dan is de 1-keten $f$ een rand, dus $\beta([f])=[f]_G=1$. Dit impliceert dat $[f]\in [\pi_{1}(X), \pi_{1}(X)]$, wat we moesten bewijzen. \B
+Zij nu $f$ een lus met basispunt $x_0$ waarvoor $[f]\in \ker \gamma$. Dan is de 1-keten $f$ een rand, dus $\delta([f]_H)=[f]_G=1$. Dit impliceert dat $[f]\in [\pi_{1}(X), \pi_{1}(X)]$, wat we moesten bewijzen. \B
 
 \begin{eopm}
 De bovenstaande stelling is een speciaal geval van de stelling van Hurewicz. Het ontbrekend geval voor deze stelling is dat als $X$  enkelvoudig samenhangend is, dan is de eerste niet-triviale homotopiegroep $\pi_n(X)$ (met $n>0$) isomorf is met $H_n(X)$. Merk op dat beide groepen reeds abels zijn.
@@ -2286,7 +2293,7 @@ $\deg(g \circ f) = \deg(g). \deg(f) $,
 \end{itemize}
 
 \item
-Beschouw de afbeelding $r_{i,n} : \mathbb{S}^n \to \mathbb{S}^n: (x_1, \dots, x_i, \dots, x_n) \mapsto (x_1, \dots, - x_i, \dots, x_n)$. Toon aan dat de graad hiervan $-1$ is. (Hint: Zoek een geschikte representant van een generator van $H_n(\mathbb{S}^n )$, je moet hierbij enkel aantonen dat het een $n$-keten is, niet dat het geen $n$-rand is.)
+Beschouw de afbeelding $r_{i,n} : \mathbb{S}^n \to \mathbb{S}^n: (x_0, \dots, x_i, \dots, x_n) \mapsto (x_0, \dots, - x_i, \dots, x_n)$. Toon aan dat de graad hiervan $-1$ is. (Hint: Zoek een geschikte representant van een generator van $H_n(\mathbb{S}^n )$, je moet hierbij enkel aantonen dat het een gesloten $n$-keten is, niet dat het geen $n$-rand is.)
 
 \item
 Toon aan dat de graad van de antipodale afbeelding op $\mathbb{S}^n$ graad $(-1)^{n+1}$ heeft. 
