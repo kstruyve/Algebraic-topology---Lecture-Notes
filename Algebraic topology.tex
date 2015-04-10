@@ -972,7 +972,7 @@ Gebruik dit om de associativiteit te bewijzen voor de bewerking van de homotopie
 \section{Fundamentaalgroepen}
 Zij $X$ een topologische ruimte. Vaak zullen extra veronderstellen dat $X$ pad-samenhangend is. Dit is logisch  aangezien we praten over paden in $X$ en hun samenstellingen. Indien dit niet het geval zou zijn kan men de pad-samenhangendheidscomponenten van $X$ afzonderlijk beschouwen.
 
-Een verzameling met een parti\"ele binaire functie die voldoet aan de eigenschappen van Stelling~\ref{stel:grp} noemt men een \emph{groepo\"ide}. De groepo\"ide gevormd door paden in $X$ en hun samenstelling noemt men de \emph{fundamentaalgroepo\"ide} $\pi_1(X)$ van $X$.
+Een verzameling met een parti\"ele binaire functie die voldoet aan de eigenschappen van Stelling~\ref{stel:grp} noemt men een \emph{groepo\"ide}. De groepo\"ide gevormd door de pad-homotopieklasses van paden in $X$ en hun samenstelling noemt men de \emph{fundamentaalgroepo\"ide} $\pi_1(X)$ van $X$.
 
 Aangezien de algebra\"ische structuur van een groepo\"ide enigszins beperkt is, leggen we de volgende restrictie op. Kies een punt $x_0 \in X$. We beschouwen nu de homotopieklassen van lussen met  basispunt $x_0$ in de fundamentaalgroepo\"ide.
 
@@ -1196,7 +1196,7 @@ Als $Y\stackrel{f}{\to} X$ een fibratie is van $X$, noemt men $Y$ een {\em gevez
 \dd : \mathbb{C}^2 \times \mathbb{C}^2 &\to \R \\
 (a,b) \times (c,d)  &\mapsto \sqrt{\vert a - c \vert^2 + \vert b- d \vert^2}
 \end{align*}
-Merk op dat als we $\mathbb{C}^2$ als een vectorruimte over $\R$, dat dit de standaard Euclidische metriek is. De eenheidsbal in het complexe vlak affiene vlak is dus homeomorf met de 3-dimensionale sfeer $\mathbb{S}^3$.
+Merk op dat als we $\mathbb{C}^2$ beschouwen als een vectorruimte over $\R$, dat dit de standaard Euclidische metriek is. De eenheidssfeer in het complexe (affiene) vlak is dus homeomorf met de 3-dimensionale sfeer $\mathbb{S}^3$.
 
 Het complex vlak minus de oorsprong kunnen we continue afbeelden op de projectieve rechte over de complexe getallen. Deze ruimte bestaat uit de complexe getallen (dus een Euclidisch vlak) unie een punt op oneindig, we bekomen dus een 2-dimensionale sfeer $\mathbb{S}^2$. De restrictie van deze afbeelding op $\mathbb{S}^3$ is nu de \emph{Hopf-fibratie} met vezels homeomorf aan $\mathbb{S}^1$. (Men noteert dit soms schematisch met $\Sf^1 \hookrightarrow \Sf^3 \to \Sf^2$.)
 \end{vbn}
@@ -1219,7 +1219,7 @@ Als $Y$ een overdekking is van $X$ en $W\subseteq X$ een deelruimte  van $X$, da
 
 \begin{vbn} \label{overd} De afbeeldingen
 \begin{itemize}
-\item $\C\setminus\{0\} \to \C\setminus \{0\}: z\to z^n, n\in \mathbb{N}\setminus\{0\}$;
+\item $\C\setminus\{0\} \to \C\setminus \{0\}: z\mapsto z^n, n\in \mathbb{N}\setminus\{0\}$;
 \item $\C \to \C^{*}: z\mapsto e^{2\pi iz}$;
 \item $\R \to\mathbb{S}^{1}= \{z\in \C||z|=1\}: r\mapsto e^{2\pi ir}$;
 \item $u:\mathbb{S}^{2}\to \mathbb{P}^{2}$, $u$ de afbeelding die $a$ met $-a$ identificeert;
@@ -1419,7 +1419,7 @@ Toon aan dat er geen retractie van de gesloten schijf naar zijn rand bestaat.
 \begin{oef}
 Zij $f : \mathbb{S}^1 \rightarrow \mathbb{S}^1$ een continue afbeelding. Zij $f_* : \pi_1(\mathbb{S}^1,1) \rightarrow \pi_1(\mathbb{S}^1,f(1))$ de geinduceerde afbeelding op de homotopiegroepen. Zij $[\gamma]$ een voortbrenger van  $\pi_1(\mathbb{S}^1,1)$ en $[\gamma']$ een voortbrenger van $ \pi_1(\mathbb{S}^1,f(1))$. We defini\"eren de {\em graad} van $f$ door 
 \[
-f_*([y]) = \mathrm{deg} f \cdot [\gamma'] .
+f_*([\gamma]) = \mathrm{deg} f \cdot [\gamma'] .
 \] 
 Merk op dat dit gedefinieerd is op teken na onafhankelijk van de keuze van voortbrengers.
 
